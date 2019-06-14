@@ -24,7 +24,7 @@ import { isWindows, isOSX } from '@theia/core/lib/common/os';
  */
 export async function resolveDebugAdapterExecutable(pluginPath: string, debuggerContribution: DebuggerContribution): Promise<theia.DebugAdapterExecutable | undefined> {
     const info = toPlatformInfo(debuggerContribution);
-    let program = (info && info.program || debuggerContribution.program) || '<test>';
+    let program = (info && info.program || debuggerContribution.program);
     if (!program) {
         return undefined;
     }
